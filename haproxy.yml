@@ -5,12 +5,6 @@
   gather_facts: false # remove later! speeds up testing
   become: true
 
-  pre_tasks:
-  - name: enable repos
-    template:
-      src: ./open_three-tier-app.repo
-      dest: /etc/yum.repos.d/open_three-tier-app.repo
-      mode: 0644
-
   roles:
-    - HAproxy
+    - common
+    - haproxy
